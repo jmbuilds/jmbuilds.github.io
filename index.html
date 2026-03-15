@@ -376,11 +376,11 @@
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 14px;
     }
-    @media (max-width: 840px) {
-      .cards-grid { grid-template-columns: 1fr; max-width: 480px; }
+    @media (max-width: 640px) {
+      .cards-grid { grid-template-columns: 1fr; }
     }
 
     /* Light cards */
@@ -781,6 +781,16 @@
           <span class="card-badge badge-soon"><span class="badge-dot"></span>Coming Soon</span>
           <h3 class="card-title">AdvisorOS</h3>
           <p class="card-body">A workflow operating system for financial advisors to automate processes, reduce errors, and support compliant operations.</p>
+          <span class="card-cta-muted">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="5"/><path d="M6.5 4v3l1.8 1.1"/></svg>
+            In Development
+          </span>
+        </div>
+
+        <div class="card reveal d4">
+          <span class="card-badge badge-soon"><span class="badge-dot"></span>Coming Soon</span>
+          <h3 class="card-title">AgentOS</h3>
+          <p class="card-body">A workflow suite for insurance agents to streamline operations, reduce manual work, and stay on top of client and compliance demands.</p>
           <span class="card-cta-muted">
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="5"/><path d="M6.5 4v3l1.8 1.1"/></svg>
             In Development
