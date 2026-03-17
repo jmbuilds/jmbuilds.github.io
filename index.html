@@ -474,6 +474,29 @@
     .footer-meta-group { display: flex; gap: 18px; align-items: center; }
     .footer-meta { font-size: 12px; color: var(--ink-300); }
 
+    /* ── OS FEATURED CARD ── */
+    .os-featured { padding: clamp(28px, 4vw, 44px); }
+    .os-featured-inner { display: flex; align-items: flex-start; gap: 40px; }
+
+    /* ── OS GRID ── */
+    .os-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 840px) { .os-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px)  { .os-grid { grid-template-columns: 1fr; } }
+
+    /* ── ROLE LABEL ── */
+    .os-role {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-300);
+      margin-bottom: 8px;
+    }
+
     /* ── REVEAL ── */
     .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.55s var(--ease), transform 0.55s var(--ease); }
     .reveal.d2 { transition-delay: 0.08s; }
@@ -533,8 +556,8 @@
           <span class="eyebrow-dot"></span>
           <span class="eyebrow-text">Christ is King <span style="font-size:20px; line-height:1; vertical-align:middle;">☦</span></span>
         </div>
-        <h1 class="hero-headline">Founder building systems<br />and service businesses.</h1>
-        <p class="hero-sub">I build tools, systems, and companies focused on operational excellence, automation, and service.</p>
+        <h1 class="hero-headline">Founder building software,<br />systems, and service businesses.</h1>
+        <p class="hero-sub">I build software and service businesses centered on operational excellence, automation, and execution.</p>
         <div class="hero-ctas">
           <a href="#work" class="btn btn-primary btn-lg">
             Explore My Work
@@ -553,16 +576,89 @@
   </section>
 
 
-  <!-- WORK -->
+  <!-- OPERATOR STACK -->
   <section id="work">
     <div class="wrap">
-      <div class="work-head reveal">
-        <span class="section-label">Selected Work</span>
-        <h2 class="section-title">Businesses &amp; Systems</h2>
-        <p class="section-intro">A few of the businesses and systems I'm building.</p>
-      </div>
-      <div class="cards-grid">
 
+      <div class="work-head reveal">
+        <span class="section-label">The Operator Stack</span>
+        <h2 class="section-title">Operating systems for modern operators.</h2>
+        <p class="section-intro">The Operator Stack is a family of role-specific operating systems for the people who manage priorities, clients, pipelines, jobs, and projects. Each platform is built for a specific profession, while sharing the same operational philosophy — helping operators run their work with more clarity, consistency, and control.</p>
+      </div>
+
+      <!-- Featured: BuilderOS -->
+      <div class="card os-featured reveal" style="margin-bottom:14px;">
+        <div class="os-featured-inner">
+          <div>
+            <span class="card-badge badge-build"><span class="badge-dot"></span>Featured</span>
+            <h3 class="card-title" style="font-size:clamp(24px,3.5vw,32px);">BuilderOS</h3>
+            <p style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-300); margin-bottom:10px;">For Founders</p>
+            <p class="card-body" style="max-width:480px;">A personal operating system for founders to manage priorities, goals, and execution with clarity. BuilderOS is the foundation for a broader family of operating systems designed for modern operators.</p>
+            <a href="builderos.html" class="card-cta" style="margin-top:4px;">
+              Explore BuilderOS
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5h9M8 3l4 3.5L8 10"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- OS Grid -->
+      <div class="os-grid">
+
+        <div class="card reveal">
+          <span class="card-badge badge-soon"><span class="badge-dot"></span>Coming Soon</span>
+          <p class="os-role">For Financial Advisors</p>
+          <h3 class="card-title">AdvisorOS</h3>
+          <p class="card-body">For financial advisors to manage client workflows, compliance, and operational follow-through.</p>
+          <span class="card-cta-muted"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="5"/><path d="M6.5 4v3l1.8 1.1"/></svg>In Development</span>
+        </div>
+
+        <div class="card reveal d2">
+          <span class="card-badge badge-soon"><span class="badge-dot"></span>Coming Soon</span>
+          <p class="os-role">For Insurance Agents</p>
+          <h3 class="card-title">AgentOS</h3>
+          <p class="card-body">For insurance agents to manage applications, pipelines, and client operations.</p>
+          <span class="card-cta-muted"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="5"/><path d="M6.5 4v3l1.8 1.1"/></svg>In Development</span>
+        </div>
+
+        <div class="card reveal d3">
+          <span class="card-badge badge-soon"><span class="badge-dot"></span>Coming Soon</span>
+          <p class="os-role">For Sales Reps</p>
+          <h3 class="card-title">RepOS</h3>
+          <p class="card-body">For sales reps to manage activity, pipeline momentum, and follow-up.</p>
+          <span class="card-cta-muted"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="5"/><path d="M6.5 4v3l1.8 1.1"/></svg>In Development</span>
+        </div>
+
+        <div class="card reveal d2">
+          <span class="card-badge badge-soon"><span class="badge-dot"></span>Coming Soon</span>
+          <p class="os-role">For Field Operators</p>
+          <h3 class="card-title">FieldOS</h3>
+          <p class="card-body">For field operators to manage jobs, teams, and service execution in real time.</p>
+          <span class="card-cta-muted"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="5"/><path d="M6.5 4v3l1.8 1.1"/></svg>In Development</span>
+        </div>
+
+        <div class="card reveal d3">
+          <span class="card-badge badge-soon"><span class="badge-dot"></span>Coming Soon</span>
+          <p class="os-role">For Project Managers</p>
+          <h3 class="card-title">ProjectOS</h3>
+          <p class="card-body">For project managers to plan, track, and deliver work without the complexity of traditional tools.</p>
+          <span class="card-cta-muted"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="5"/><path d="M6.5 4v3l1.8 1.1"/></svg>In Development</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- BUILT & APPLIED -->
+  <section id="applied" style="background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding-block:var(--section-y);">
+    <div class="wrap">
+      <div class="work-head reveal">
+        <span class="section-label">Built &amp; Applied</span>
+        <h2 class="section-title">Built and applied in the real world.</h2>
+        <p class="section-intro">Separate from the Operator Stack, PurEco Clean is a service business built and operated with the same commitment to operational excellence.</p>
+      </div>
+      <div style="max-width:480px;">
         <div class="card reveal">
           <span class="card-badge badge-live"><span class="badge-dot"></span>Active</span>
           <h3 class="card-title">PurEco Clean</h3>
@@ -572,27 +668,6 @@
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5h9M8 3l4 3.5L8 10"/></svg>
           </a>
         </div>
-
-        <div class="card reveal d2">
-          <span class="card-badge badge-build"><span class="badge-dot"></span>Building</span>
-          <h3 class="card-title">BuilderOS</h3>
-          <p class="card-body">A personal operating system designed to help founders manage priorities, goals, and execution with clarity.</p>
-          <a href="builderos.html" class="card-cta">
-            Explore BuilderOS
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5h9M8 3l4 3.5L8 10"/></svg>
-          </a>
-        </div>
-
-        <div class="card reveal d3">
-          <span class="card-badge badge-soon"><span class="badge-dot"></span>Coming Soon</span>
-          <h3 class="card-title">AdvisorOS &amp; AgentOS</h3>
-          <p class="card-body">Two workflow operating systems being built in tandem — one for financial advisors, one for insurance agents. Both focused on automating processes, reducing errors, and supporting compliant operations.</p>
-          <span class="card-cta-muted">
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="5"/><path d="M6.5 4v3l1.8 1.1"/></svg>
-            In Development
-          </span>
-        </div>
-
       </div>
     </div>
   </section>
