@@ -5,8 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light" />
   <meta name="supported-color-schemes" content="light" />
-  <meta name="description" content="Joseph Mitchell, Founder building systems and service businesses in Orlando, Florida." />
+  <meta name="description" content="Joseph Mitchell, Founder building software, service businesses, and systems in Orlando, Florida." />
   <title>Joseph Mitchell</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Joseph Mitchell" />
+  <meta property="og:description" content="Founder building software, service businesses, and systems in Orlando, Florida." />
+  <meta property="og:url" content="https://jmbuilds.github.io" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://jmbuilds.github.io/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Joseph Mitchell" />
+  <meta name="twitter:description" content="Founder building software, service businesses, and systems in Orlando, Florida." />
+  <meta name="twitter:image" content="https://jmbuilds.github.io/og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23111111'/><text x='50' y='68' font-family='Georgia,serif' font-size='52' font-weight='700' text-anchor='middle' fill='white'>JM</text></svg>" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,6 +40,7 @@
       --ink-300:     #9ca3af;
       --border:      #e5e7eb;
 
+      --accent:      #C27B2C;
       --serif: 'Instrument Serif', Georgia, serif;
       --sans:  'DM Sans', 'Helvetica Neue', Arial, sans-serif;
 
@@ -190,7 +207,7 @@
       font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--ink-300);
+      color: var(--accent);
       display: block;
       margin-bottom: 10px;
     }
@@ -398,13 +415,12 @@
     @media (max-width: 400px) { .principles-grid { grid-template-columns: 1fr; } }
 
     .p-tile {
-      background: var(--card);
       padding: clamp(22px, 3.5vw, 34px) clamp(20px, 2.8vw, 28px);
       border-right: 1px solid var(--border);
-      transition: background 0.18s;
+      transition: filter 0.18s;
     }
     .p-tile:last-child { border-right: none; }
-    .p-tile:hover { background: var(--bg-alt); }
+    .p-tile:hover { filter: brightness(0.97); }
     @media (max-width: 720px) {
       .p-tile:nth-child(2n) { border-right: none; }
       .p-tile:nth-child(1), .p-tile:nth-child(2) { border-bottom: 1px solid var(--border); }
@@ -477,6 +493,10 @@
     .footer-meta-group { display: flex; gap: 18px; align-items: center; }
     .footer-meta { font-size: 12px; color: var(--ink-300); }
 
+    @media (max-width: 600px) {
+      #applied .card-grid-2 { grid-template-columns: 1fr !important; }
+    }
+
     /* ── OS FEATURED CARD ── */
     .os-featured { padding: clamp(28px, 4vw, 44px); }
     .os-featured-inner { display: flex; align-items: flex-start; gap: 40px; }
@@ -499,6 +519,38 @@
       color: var(--ink-300);
       margin-bottom: 8px;
     }
+
+    /* ── CARD TINTS ── */
+    .tint-anchor    { background: #FBF5E6; border-color: #E8D9B8; }
+    /* Operator Stack — warm/cool distinct from Built & Applied greens/blues */
+    .tint-advisor   { background: #F0EBFE; border-color: #C9B8F0; }
+    .tint-agent     { background: #FEF0E8; border-color: #F0C8A8; }
+    .tint-field     { background: #E8F6FE; border-color: #A8D4F0; }
+    /* Built & Applied — greens and navy */
+    .tint-pureco    { background: #E5F7E8; border-color: #B0D9B5; }
+    .tint-intequity { background: #E8EDF8; border-color: #BCC8E8; }
+    /* Principles */
+    .tint-faith     { background: #FEF6D8; border-color: #E8D48A; }
+    .tint-family    { background: #FDEAF3; border-color: #E8B8D4; }
+    .tint-health    { background: #E4F8EA; border-color: #A8D8B0; }
+    .tint-building  { background: #E8EFFE; border-color: #B8CCEE; }
+
+    /* ── OS CARD ACCENTS ── */
+    .card { -webkit-tap-highlight-color: transparent; }
+
+    /* ── PRINCIPLE ICON ── */
+    .p-icon {
+      width: 36px; height: 36px;
+      min-width: 36px; min-height: 36px;
+      max-width: 36px; max-height: 36px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .p-icon-faith  { background: #fef3c7; }
+    .p-icon-family { background: #fce7f3; }
+    .p-icon-health { background: #dcfce7; }
+    .p-icon-build  { background: #dbeafe; }
 
     /* ── REVEAL ── */
     .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.55s var(--ease), transform 0.55s var(--ease); }
@@ -557,7 +609,7 @@
       <div class="hero-content">
         <div class="hero-eyebrow">
           <span class="eyebrow-dot"></span>
-          <span class="eyebrow-text">Christ is King <span style="font-size:20px; line-height:1; vertical-align:middle;">☦</span></span>
+          <span class="eyebrow-text">Christ is King ✝</span>
         </div>
         <h1 class="hero-headline">Founder building software,<br />systems, and service businesses.</h1>
         <p class="hero-sub">I build software and service businesses centered on operational excellence, automation, and execution.</p>
@@ -585,10 +637,10 @@
       <div class="work-head reveal">
         <span class="section-label">Flagship Product</span>
         <h2 class="section-title">Anchor</h2>
-        <p class="section-intro">A standalone product, separate from the Operator Stack.</p>
+        <p class="section-intro">A personal operating system for founders. Built to help you stay grounded while running everything at once.</p>
       </div>
 
-      <div class="card os-featured reveal" style="margin-bottom:0;">
+      <div class="card os-featured tint-anchor reveal" style="margin-bottom:0;">
         <div class="os-featured-inner">
           <div>
             <span class="card-badge badge-build"><span class="badge-dot"></span>Featured</span>
@@ -619,7 +671,7 @@
       <!-- OS Grid -->
       <div class="os-grid">
 
-        <div class="card reveal">
+        <div class="card tint-advisor reveal">
           <span class="card-badge badge-soon"><span class="badge-dot"></span>Coming Soon</span>
           <p class="os-role">For Financial Advisors</p>
           <h3 class="card-title">AdvisorOS</h3>
@@ -627,7 +679,7 @@
           <span class="card-cta-muted"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="5"/><path d="M6.5 4v3l1.8 1.1"/></svg>In Development</span>
         </div>
 
-        <div class="card reveal d2">
+        <div class="card tint-agent reveal d2">
           <span class="card-badge badge-soon"><span class="badge-dot"></span>Coming Soon</span>
           <p class="os-role">For Insurance Agents</p>
           <h3 class="card-title">AgentOS</h3>
@@ -635,11 +687,11 @@
           <span class="card-cta-muted"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="5"/><path d="M6.5 4v3l1.8 1.1"/></svg>In Development</span>
         </div>
 
-        <div class="card reveal d2">
+        <div class="card tint-field reveal d2">
           <span class="card-badge badge-soon"><span class="badge-dot"></span>Coming Soon</span>
           <p class="os-role">For Field Operators</p>
           <h3 class="card-title">FieldOS</h3>
-          <p class="card-body">For field operators to manage jobs, teams, and service execution in real time.</p>
+          <p class="card-body">For the technicians and crews who work in the field, including pest control, HVAC, plumbing, electrical, landscaping, and home services, to manage jobs, schedules, and service execution in real time.</p>
           <span class="card-cta-muted"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="5"/><path d="M6.5 4v3l1.8 1.1"/></svg>In Development</span>
         </div>
 
@@ -654,11 +706,12 @@
       <div class="work-head reveal">
         <span class="section-label">Built &amp; Applied</span>
         <h2 class="section-title">Built and applied in the real world.</h2>
-        <p class="section-intro">Separate from the Operator Stack, PurEco Clean is a service business built and operated with the same commitment to operational excellence.</p>
+        <p class="section-intro">Separate from the Operator Stack, these are the businesses and funds built and operated with the same commitment to execution and long-term thinking.</p>
       </div>
-      <div style="max-width:480px;">
-        <div class="card reveal">
-          <span class="card-badge badge-live"><span class="badge-dot"></span>Active</span>
+      <div class="card-grid-2" style="display:grid; grid-template-columns:repeat(2,1fr); gap:14px; max-width:720px;">
+
+        <div class="card tint-pureco reveal">
+          <span class="card-badge badge-live"><span class="badge-dot"></span>Active · Est. 2025</span>
           <h3 class="card-title">PurEco Clean</h3>
           <p class="card-body">Residential and commercial cleaning company based in Orlando, focused on high-quality eco-conscious cleaning.</p>
           <a href="https://purecocleanfl.com" target="_blank" rel="noopener noreferrer" class="card-cta">
@@ -666,6 +719,17 @@
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5h9M8 3l4 3.5L8 10"/></svg>
           </a>
         </div>
+
+        <div class="card tint-intequity reveal d2">
+          <span class="card-badge badge-live"><span class="badge-dot"></span>Active · Est. 2021</span>
+          <h3 class="card-title">Intequity Fund</h3>
+          <p class="card-body">Serving in an advisory and operational capacity for a fund focused on emerging technology infrastructure, with a core thesis around AI verification and data security protocols.</p>
+          <span class="card-cta-muted">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="5"/><path d="M6.5 4v3l1.8 1.1"/></svg>
+            Private
+          </span>
+        </div>
+
       </div>
     </div>
   </section>
@@ -680,8 +744,8 @@
           <h2 class="section-title" style="margin-top:10px;">Building with discipline<br/>and purpose.</h2>
         </div>
         <div class="about-body reveal d2">
-          <p>I'm a founder focused on building systems that help operators work more effectively. My work currently spans service businesses, workflow automation tools, and founder productivity systems.</p>
-          <p>I care about building with discipline, clarity, and long-term purpose, creating businesses and tools that are useful, practical, and built to last. Everything I build is grounded in a commitment to operational excellence and honest service.</p>
+          <p>I'm a founder based in Orlando building across three areas: software for operators, service businesses, and emerging technology investing. Right now that means running PurEco Clean, developing Anchor and the Operator Stack, and serving in an advisory and operational role for Intequity Fund.</p>
+          <p>Faith, family, and discipline shape how I work and what I build toward. I care about doing real work, not just talking about it. Most of my time is split between operating PurEco on the ground and building software, with the goal of getting Anchor into early access before the end of the year.</p>
         </div>
       </div>
     </div>
@@ -694,25 +758,44 @@
       <div class="principles-head reveal">
         <span class="section-label">Principles</span>
         <h2 class="section-title" style="margin-top:10px;">Core Principles</h2>
+        <p class="section-intro" style="margin-top:12px;">These four things shape how I build and what I build toward.</p>
       </div>
       <div class="principles-grid">
-        <div class="p-tile reveal">
-          <span class="p-num">01</span>
+        <div class="p-tile tint-faith reveal">
+          <div class="p-icon p-icon-faith">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#92400e" stroke-width="1.8" stroke-linecap="round">
+              <line x1="8" y1="1" x2="8" y2="15"/><line x1="4" y1="5" x2="12" y2="5"/>
+            </svg>
+          </div>
           <div class="p-name">Faith</div>
           <p class="p-desc">Christ-centered life and leadership.</p>
         </div>
-        <div class="p-tile reveal d2">
-          <span class="p-num">02</span>
+        <div class="p-tile tint-family reveal d2">
+          <div class="p-icon p-icon-family">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#9d174d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 14V7.5L8 2l7 5.5V14H1z"/><rect x="5.5" y="9" width="5" height="5"/>
+            </svg>
+          </div>
           <div class="p-name">Family</div>
           <p class="p-desc">Building a meaningful life with the people closest to me.</p>
         </div>
-        <div class="p-tile reveal d3">
-          <span class="p-num">03</span>
+        <div class="p-tile tint-health reveal d3">
+          <div class="p-icon p-icon-health">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#166534" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="1,8 4,3 7,11 10,6 13,9 15,7"/>
+            </svg>
+          </div>
           <div class="p-name">Health</div>
           <p class="p-desc">Physical discipline and long-term wellbeing.</p>
         </div>
-        <div class="p-tile reveal d4">
-          <span class="p-num">04</span>
+        <div class="p-tile tint-building reveal d4">
+          <div class="p-icon p-icon-build">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 12l-8.5 8.5a2.12 2.12 0 0 1-3-3L12 9"/>
+              <path d="M17.64 15L22 10.64"/>
+              <path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 0 0-3.94-1.64H9l.92.82A6.18 6.18 0 0 1 12 8.4v1.56l2 2h2.47l2.26 1.91"/>
+            </svg>
+          </div>
           <div class="p-name">Building</div>
           <p class="p-desc">Creating businesses and systems that provide real value.</p>
         </div>
@@ -737,7 +820,7 @@
             </svg>
             Email
           </a>
-          <a href="https://instagram.com/nordiccrusader" target="_blank" rel="noopener noreferrer" class="pill-btn">
+          <a href="https://instagram.com/jrmitchell99" target="_blank" rel="noopener noreferrer" class="pill-btn">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
               <rect x="1.5" y="1.5" width="11" height="11" rx="3"/><circle cx="7" cy="7" r="2.2"/><circle cx="10.2" cy="3.8" r="0.4" fill="currentColor"/>
             </svg>
@@ -756,7 +839,8 @@
         <span class="footer-name">Joseph Mitchell</span>
         <div class="footer-meta-group">
           <span class="footer-meta">Orlando, Florida</span>
-          <span class="footer-meta">Christ is King <span style="font-size:16px; line-height:1; vertical-align:middle;">☦</span></span>
+          <a href="https://instagram.com/jrmitchell99" target="_blank" rel="noopener noreferrer" class="footer-meta" style="text-decoration:none; transition:color 0.15s;" onmouseover="this.style.color='#111111'" onmouseout="this.style.color=''">@jrmitchell99</a>
+          <span class="footer-meta">Christ is King ✝</span>
         </div>
       </div>
     </div>

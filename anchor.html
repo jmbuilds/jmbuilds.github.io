@@ -24,6 +24,8 @@
       --ink-300:     #9ca3af;
       --border:      #e5e7eb;
 
+      --accent:      #C27B2C;
+
       --serif: 'Instrument Serif', Georgia, serif;
       --sans:  'DM Sans', 'Helvetica Neue', Arial, sans-serif;
 
@@ -177,7 +179,7 @@
       font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--ink-300);
+      color: var(--accent);
       display: block;
       margin-bottom: 10px;
     }
@@ -365,6 +367,16 @@
     .footer-meta-group { display: flex; gap: 18px; align-items: center; }
     .footer-meta { font-size: 12px; color: var(--ink-300); }
 
+    .feature-card { -webkit-tap-highlight-color: transparent; }
+
+    /* ── CARD TINTS ── */
+    .tint-blue    { background: #F0EBFE; border-color: #C9B8F0; }
+    .tint-green   { background: #E4F8EA; border-color: #A8D8B0; }
+    .tint-amber   { background: #FEF6D8; border-color: #E8D48A; }
+    .tint-sky     { background: #E8F6FE; border-color: #A8D4F0; }
+    .tint-rose    { background: #FDEAF3; border-color: #E8B8D4; }
+    .tint-navy    { background: #E8EDF8; border-color: #BCC8E8; }
+
     /* ── REVEAL ── */
     .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.55s var(--ease), transform 0.55s var(--ease); }
     .reveal.d2 { transition-delay: 0.08s; }
@@ -447,22 +459,22 @@
         <h2 class="section-title">What's inside Anchor</h2>
       </div>
       <div class="features-grid">
-        <div class="feature-card reveal">
+        <div class="feature-card tint-blue reveal">
           <span class="feature-num">01</span>
           <h3 class="feature-title">Priority Dashboard</h3>
           <p class="feature-desc">A centralized view of what matters most across your business, projects, and personal goals. See everything in one place and always know where to focus first.</p>
         </div>
-        <div class="feature-card reveal d2">
+        <div class="feature-card tint-green reveal d2">
           <span class="feature-num">02</span>
           <h3 class="feature-title">Weekly Execution System</h3>
           <p class="feature-desc">A structured weekly rhythm designed to keep you moving. Plan your week with intention, review your progress, and build the discipline of consistent execution.</p>
         </div>
-        <div class="feature-card reveal d3">
+        <div class="feature-card tint-amber reveal d3">
           <span class="feature-num">03</span>
           <h3 class="feature-title">Life Pillars</h3>
           <p class="feature-desc">Track progress across the four pillars that matter most: Faith, Health, Family, and Business. Founder success means nothing if the rest of your life is falling apart.</p>
         </div>
-        <div class="feature-card reveal d4">
+        <div class="feature-card tint-sky reveal d4">
           <span class="feature-num">04</span>
           <h3 class="feature-title">Business &amp; Project Tracking</h3>
           <p class="feature-desc">Keep all your ventures organized. Track milestones, monitor key metrics, and manage multiple projects without losing clarity on each business's direction.</p>
@@ -505,15 +517,15 @@
         <h2 class="section-title" style="margin-top:10px;">Built for builders<br/>who operate at full speed.</h2>
       </div>
       <div class="who-grid">
-        <div class="feature-card reveal">
+        <div class="feature-card tint-navy reveal">
           <h3 class="feature-title">Solo Founders</h3>
           <p class="feature-desc">You're running multiple things at once with no team to hold you accountable. Anchor gives you the structure to stay on track without the overhead.</p>
         </div>
-        <div class="feature-card reveal d2">
+        <div class="feature-card tint-green reveal d2">
           <h3 class="feature-title">Service Business Owners</h3>
           <p class="feature-desc">You're operating a real business while trying to build the next one. Anchor helps you manage both without dropping either.</p>
         </div>
-        <div class="feature-card reveal d3">
+        <div class="feature-card tint-rose reveal d3">
           <h3 class="feature-title">Multi-Venture Builders</h3>
           <p class="feature-desc">You have several projects in motion and need a single system that tracks all of them without requiring a different tool for each one.</p>
         </div>
