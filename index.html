@@ -31,16 +31,16 @@
   <style>
     :root {
       color-scheme: light;
-      --bg:          #f8f8f8;
-      --bg-alt:      #f3f4f6;
-      --card:        #ffffff;
-      --ink-900:     #111111;
-      --ink-700:     #1f2937;
-      --ink-500:     #4b5563;
-      --ink-300:     #9ca3af;
-      --border:      #e5e7eb;
+      --bg:          #F6F6F4;
+      --bg-alt:      #EEECEA;
+      --card:        #FDFCFC;
+      --ink-900:     #1A1814;
+      --ink-700:     #3D3A35;
+      --ink-500:     #6B6560;
+      --ink-300:     #A09890;
+      --border:      #E2DDD7;
 
-      --accent:      #C27B2C;
+      --accent:      #7A6B5A;
       --serif: 'Instrument Serif', Georgia, serif;
       --sans:  'DM Sans', 'Helvetica Neue', Arial, sans-serif;
 
@@ -93,14 +93,14 @@
     .btn:active { transform: scale(0.98); }
 
     .btn-primary {
-      background: var(--ink-900);
-      color: #fff;
-      border: 1.5px solid var(--ink-900);
+      background: #1A1814;
+      color: #F7F6F3;
+      border: 1.5px solid #1A1814;
     }
     .btn-primary:hover {
-      background: #2a2a2a;
-      border-color: #2a2a2a;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      background: #2C2820;
+      border-color: #2C2820;
+      box-shadow: 0 4px 16px rgba(26,24,20,0.18);
     }
     .btn-secondary {
       background: transparent;
@@ -332,12 +332,12 @@
       margin-bottom: 18px;
     }
     .badge-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
-    .badge-live  { color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; }
-    .badge-live .badge-dot  { background: #16a34a; }
-    .badge-build { color: #92400e; background: #fef3c7; border: 1px solid #fde68a; }
-    .badge-build .badge-dot { background: #d97706; }
-    .badge-soon  { color: var(--ink-300); background: #f3f4f6; border: 1px solid var(--border); }
-    .badge-soon .badge-dot  { background: #9ca3af; }
+    .badge-live  { color: #2D5A3D; background: #E8F0EB; border: 1px solid #C4D9CB; }
+    .badge-live .badge-dot  { background: #3D7A52; }
+    .badge-build { color: #5A4520; background: #F0EAE0; border: 1px solid #D9CCBA; }
+    .badge-build .badge-dot { background: #8A6A35; }
+    .badge-soon  { color: var(--ink-300); background: var(--bg-alt); border: 1px solid var(--border); }
+    .badge-soon .badge-dot  { background: var(--ink-300); }
 
     .card-title {
       font-family: var(--serif);
@@ -477,10 +477,10 @@
                   color 0.18s var(--ease), box-shadow 0.18s var(--ease), transform 0.14s var(--ease);
     }
     .pill-btn:hover {
-      background: var(--ink-900);
-      border-color: var(--ink-900);
-      color: #fff;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      background: #1A1814;
+      border-color: #1A1814;
+      color: #F7F6F3;
+      box-shadow: 0 4px 14px rgba(26,24,20,0.14);
       transform: translateY(-1px);
     }
     .pill-btn svg { flex-shrink: 0; transition: stroke 0.18s; }
@@ -520,15 +520,15 @@
       margin-bottom: 8px;
     }
 
-    /* ── CARD TINTS ── */
-    .tint-anchor    { background: #FBF5E6; border-color: #E8D9B8; }
-    .tint-field     { background: #E8F7EC; border-color: #B8DFC0; }
-    .tint-pureco    { background: #E5F7E8; border-color: #B0D9B5; }
-    .tint-intequity { background: #E8EDF8; border-color: #BCC8E8; }
-    .tint-faith     { background: #FEF6D8; border-color: #E8D48A; }
-    .tint-family    { background: #FDEAF3; border-color: #E8B8D4; }
-    .tint-health    { background: #E4F8EA; border-color: #A8D8B0; }
-    .tint-building  { background: #E8EFFE; border-color: #B8CCEE; }
+    /* ── CARD TINTS — neutral luxury ── */
+    .tint-anchor    { background: #F7F4EE; border-color: #DDD8CF; }
+    .tint-field     { background: #F2F4F0; border-color: #D4D9CE; }
+    .tint-pureco    { background: #F2F5F0; border-color: #D2D9CC; }
+    .tint-intequity { background: #F0F1F5; border-color: #CDD1DC; }
+    .tint-faith     { background: #F7F4ED; border-color: #DDD6C4; }
+    .tint-family    { background: #F6F2F4; border-color: #DAD0D6; }
+    .tint-health    { background: #F1F5F1; border-color: #CEDAD0; }
+    .tint-building  { background: #F1F3F7; border-color: #CDD4E0; }
 
     /* ── OS CARD ACCENTS ── */
     .card { -webkit-tap-highlight-color: transparent; }
@@ -606,8 +606,8 @@
           <span class="eyebrow-dot"></span>
           <span class="eyebrow-text">Christ is King ✝</span>
         </div>
-        <h1 class="hero-headline">Founder building software,<br />systems, and service businesses.</h1>
-        <p class="hero-sub">I build software and service businesses centered on operational excellence, automation, and execution.</p>
+        <h1 class="hero-headline">Sales professional.<br />Founder on the side.</h1>
+        <p class="hero-sub">Travel Sales Consultant at Viking by day. Building PurEco Clean, Anchor, and Intequity Fund outside of that.</p>
         <div class="hero-ctas">
           <a href="#applied" class="btn btn-primary btn-lg">
             Explore My Work
@@ -631,8 +631,8 @@
     <div class="wrap">
       <div class="work-head reveal">
         <span class="section-label">Ventures</span>
-        <h2 class="section-title">What I'm building.</h2>
-        <p class="section-intro">The businesses and investments I'm involved in as a founder and advisor.</p>
+        <h2 class="section-title">What I'm building outside of work.</h2>
+        <p class="section-intro">Businesses, software, and investments I'm involved in as a founder and advisor alongside my sales career.</p>
       </div>
       <div class="cards-grid">
 
@@ -677,11 +677,11 @@
       <div class="about-grid">
         <div class="reveal">
           <span class="section-label">About</span>
-          <h2 class="section-title" style="margin-top:10px;">Building with discipline<br/>and purpose.</h2>
+          <h2 class="section-title" style="margin-top:10px;">Sales by profession.<br/>Builder by nature.</h2>
         </div>
         <div class="about-body reveal d2">
-          <p>I'm a founder based in Orlando working across sales, service businesses, software, and investing. By day I work as a Travel Sales Consultant at Viking. Outside of that I'm building Anchor, a personal finance app, running PurEco Clean as founder, and serving in an advisory and operational role for Intequity Fund.</p>
-          <p>Faith, family, and discipline shape how I work and what I build toward. I care about doing real work, not just talking about it, and building things that create genuine value over the long term.</p>
+          <p>I'm a Travel Sales Consultant at Viking based in Orlando, where I help clients plan and book river and ocean cruises. Sales has always been a natural fit. I enjoy building relationships, understanding what people want, and helping them get there.</p>
+          <p>Outside of work I run PurEco Clean as founder, build Anchor, a personal finance app, and serve in an advisory and operational role for Intequity Fund. Faith, family, and discipline shape everything I do.</p>
         </div>
       </div>
     </div>
