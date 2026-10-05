@@ -27,19 +27,19 @@ tailwind.config = { theme: { extend: {
 :root {
   --bg:#F8FAFC; --card:#FFFFFF; --line:#E2E8F0; --head:#F1F5F9; --hover:#F8FAFC; --ink:#0F172A; --muted:#64748B;
   --accent:#0D9488; --accent-soft:#CCFBF1; --good:#16A34A; --bad:#DC2626; --warn:#B45309; --amber:#F59E0B;
-  --side:#0F172A; --side-ink:#CBD5E1; --navy:#0A0F1E; color-scheme: light;
+  --side:#0F172A; --side-ink:#CBD5E1; color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg:#0A0F1E; --card:#0F172A; --line:#1E293B; --head:#131C31; --hover:#131C31; --ink:#E2E8F0; --muted:#94A3B8;
     --accent:#2DD4BF; --accent-soft:#123B3A; --good:#4ADE80; --bad:#F87171; --warn:#FBBF24; --amber:#F59E0B;
-    --side:#070B16; --side-ink:#CBD5E1; --navy:#0D1426; color-scheme: dark;
+    --side:#070B16; --side-ink:#CBD5E1; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg:#0A0F1E; --card:#0F172A; --line:#1E293B; --head:#131C31; --hover:#131C31; --ink:#E2E8F0; --muted:#94A3B8;
   --accent:#2DD4BF; --accent-soft:#123B3A; --good:#4ADE80; --bad:#F87171; --warn:#FBBF24; --amber:#F59E0B;
-  --side:#070B16; --side-ink:#CBD5E1; --navy:#0D1426; color-scheme: dark;
+  --side:#070B16; --side-ink:#CBD5E1; color-scheme: dark;
 }
 :root { box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
 html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 64px); }
@@ -72,17 +72,17 @@ img, svg { max-width: 100%; }
 .seg button[aria-pressed="true"] { background: var(--card); color: var(--ink); font-weight: 500; box-shadow: 0 1px 2px rgba(15,23,42,.08); }
 .current-row td { background: color-mix(in srgb, var(--accent-soft) 55%, transparent); }
 
-/* True Balance: the one deep-navy surface in an otherwise white app */
-.tb-card { background: var(--navy); color: #fff; border: 1px solid rgba(255,255,255,.06); }
-.tb-badge { font-size: 11px; padding: 3px 9px; border-radius: 999px; background: rgba(13,148,136,.18); color: #5EEAD4; border: 1px solid rgba(45,212,191,.25); white-space: nowrap; }
+/* True Balance: follows the page theme; a teal top rule marks it as the signature card */
+.tb-card { background: var(--card); color: var(--ink); border: 1px solid var(--line); border-top: 3px solid var(--accent); }
+.tb-badge { font-size: 11px; padding: 3px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
 .tb-number { margin-top: 6px; font-size: clamp(44px, 10vw, 64px); line-height: 1; font-weight: 600; letter-spacing: -0.025em; font-variant-numeric: tabular-nums; }
-.tb-good { color: #4ADE80; } .tb-warn { color: #FBBF24; } .tb-bad { color: #F87171; }
-.tb-ledger { border-left: 2px solid rgba(45,212,191,.35); padding-left: 20px; }
-.tb-bank { font-size: 28px; font-weight: 600; color: #fff; letter-spacing: -0.01em; border-bottom: 1px dashed rgba(255,255,255,.35); border-radius: 4px 4px 0 0; }
-.tb-bank:hover { background: rgba(255,255,255,.06); }
-.tb-line { width: 100%; display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; font: inherit; font-size: 14px; color: rgba(255,255,255,.8); background: none; border: 0; cursor: pointer; text-align: left; }
-.tb-line:hover { color: #fff; }
-.chev { display: inline-block; width: 10px; color: rgba(255,255,255,.45); transition: transform .15s; }
+.tb-good { color: var(--good); } .tb-warn { color: var(--warn); } .tb-bad { color: var(--bad); }
+.tb-ledger { border-left: 2px solid color-mix(in srgb, var(--accent) 35%, transparent); padding-left: 20px; }
+.tb-bank { font-size: 28px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; border-bottom: 1px dashed var(--muted); border-radius: 4px 4px 0 0; }
+.tb-bank:hover { background: var(--head); }
+.tb-line { width: 100%; display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; font: inherit; font-size: 14px; color: var(--muted); background: none; border: 0; cursor: pointer; text-align: left; }
+.tb-line:hover { color: var(--ink); }
+.chev { display: inline-block; width: 10px; color: var(--muted); transition: transform .15s; }
 .chev-open { transform: rotate(90deg); }
 @media (prefers-reduced-motion: reduce) { .chev, .toggle, .toggle span { transition: none; } }
 @media (max-width: 1023px) { .tb-ledger { border-left: 0; padding-left: 0; } }
@@ -687,24 +687,24 @@ function TrueBalanceCard({ state, update, now }) {
         : `You're ${C.fmt(-tb.available)} short once ${state.settings.includeSavings ? 'bills, reserves and savings' : 'bills and reserves'} are set aside.`;
     return (React.createElement("section", { className: "tb-card rounded-2xl p-5 sm:p-8", "aria-labelledby": "tb-title" },
         React.createElement("div", { className: "flex items-center justify-between gap-3" },
-            React.createElement("h2", { id: "tb-title", className: "text-sm font-medium text-white/80 flex items-center gap-2" },
+            React.createElement("h2", { id: "tb-title", className: "text-sm font-medium text-ink flex items-center gap-2" },
                 React.createElement(AnchorMark, { className: "w-4 h-4" }),
                 "True Balance"),
             React.createElement("span", { className: "tb-badge", title: "Anchor exclusive" }, "\u2693 Anchor exclusive")),
         React.createElement("div", { className: "mt-6 grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-8 lg:gap-14" },
             React.createElement("div", { className: "flex flex-col justify-between gap-6" },
                 React.createElement("div", null,
-                    React.createElement("div", { className: "text-sm text-white/60" }, "Truly available"),
+                    React.createElement("div", { className: "text-sm text-muted" }, "Truly available"),
                     React.createElement("div", { className: 'tb-number tb-' + tb.tone }, C.fmt(tb.available)),
-                    React.createElement("p", { className: "mt-3 text-sm text-white/70 max-w-[40ch] leading-relaxed" }, status)),
-                React.createElement("p", { className: "text-xs text-white/50 max-w-[48ch] leading-relaxed" }, "Your bank tells you what you have. Anchor tells you what you can spend. Enter an actual on the Budget tab and that bill drops out.")),
+                    React.createElement("p", { className: "mt-3 text-sm text-muted max-w-[40ch] leading-relaxed" }, status)),
+                React.createElement("p", { className: "text-xs text-muted max-w-[48ch] leading-relaxed" }, "Your bank tells you what you have. Anchor tells you what you can spend. Enter an actual on the Budget tab and that bill drops out.")),
             React.createElement("div", { className: "tb-ledger" },
-                React.createElement("div", { className: "flex items-end justify-between gap-4 pb-4 border-b border-white/10" },
+                React.createElement("div", { className: "flex items-end justify-between gap-4 pb-4 border-b border-line" },
                     React.createElement("div", null,
-                        React.createElement("div", { className: "text-sm text-white/80" }, "Bank balance"),
-                        React.createElement("div", { className: "text-xs text-white/50 mt-0.5" }, updated)),
+                        React.createElement("div", { className: "text-sm text-ink" }, "Bank balance"),
+                        React.createElement("div", { className: "text-xs text-muted mt-0.5" }, updated)),
                     React.createElement(EditableValue, { value: tb.bank, onSave: setBank, label: "Bank balance", allowClear: false, className: "tb-bank" })),
-                lines.map(l => (React.createElement("div", { key: l.id, className: "border-b border-white/10" },
+                lines.map(l => (React.createElement("div", { key: l.id, className: "border-b border-line" },
                     React.createElement("button", { type: "button", className: "tb-line", "aria-expanded": open === l.id, onClick: () => setOpen(open === l.id ? null : l.id) },
                         React.createElement("span", { className: "flex items-center gap-2" },
                             React.createElement("span", { className: 'chev ' + (open === l.id ? 'chev-open' : ''), "aria-hidden": "true" }, "\u203A"),
@@ -715,15 +715,15 @@ function TrueBalanceCard({ state, update, now }) {
                             C.fmt(l.total).replace('−', ''),
                             ")")),
                     open === l.id && (React.createElement("ul", { className: "pb-3 pl-5 space-y-1.5" },
-                        l.items.length === 0 && React.createElement("li", { className: "text-xs text-white/50" }, l.empty),
-                        l.items.map(it => (React.createElement("li", { key: it.key, className: "flex justify-between gap-3 text-xs text-white/70" },
+                        l.items.length === 0 && React.createElement("li", { className: "text-xs text-muted" }, l.empty),
+                        l.items.map(it => (React.createElement("li", { key: it.key, className: "flex justify-between gap-3 text-xs text-muted" },
                             React.createElement("span", { className: "truncate" },
                                 it.name,
                                 " ",
-                                React.createElement("span", { className: "text-white/40" }, it.meta)),
+                                React.createElement("span", { className: "text-muted" }, it.meta)),
                             React.createElement("span", { className: "tabular-nums" }, C.fmt(it.amount)))))))))),
                 React.createElement("div", { className: "flex justify-between items-baseline pt-4" },
-                    React.createElement("span", { className: "text-sm font-medium text-white" }, "Truly available"),
+                    React.createElement("span", { className: "text-sm font-medium text-ink" }, "Truly available"),
                     React.createElement("span", { className: 'text-lg font-semibold tabular-nums tb-' + tb.tone },
                         C.fmt(tb.available),
                         tb.tone === 'good' ? ' ✓' : ''))))));
